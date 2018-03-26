@@ -1,10 +1,12 @@
 AC_INIT([Guile GIR], [0.1], [zeeshanak@gnome.org], [guile-gir])
 AC_CONFIG_SRCDIR([gir/gir.scm])
 AM_INIT_AUTOMAKE
+AC_CONFIG_MACRO_DIRS([m4])
 AM_MAINTAINER_MODE
 
 dnl Checks for programs.
 AC_PROG_CC
+AC_STDC_HEADERS
 
 dnl libtool stuff
 AC_LIBTOOL_DLOPEN

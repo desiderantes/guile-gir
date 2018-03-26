@@ -171,18 +171,6 @@ gi_arg_to_scm (GITypeInfo *arg_type,
                         return scm_from_int64 (arg.v_int64);
                 case GI_TYPE_TAG_UINT64:
                         return scm_from_uint64 (arg.v_uint64);
-                case GI_TYPE_TAG_INT:
-                        return scm_from_int (arg.v_int);
-                case GI_TYPE_TAG_UINT:
-                        return scm_from_uint (arg.v_uint);
-                case GI_TYPE_TAG_LONG:
-                case GI_TYPE_TAG_TIME_T:
-                        return scm_from_long (arg.v_long);
-                case GI_TYPE_TAG_ULONG:
-                        return scm_from_ulong (arg.v_ulong);
-                case GI_TYPE_TAG_SSIZE:
-                        return scm_from_ssize_t (arg.v_ssize);
-                case GI_TYPE_TAG_SIZE:
                 case GI_TYPE_TAG_GTYPE:
                         return scm_from_size_t (arg.v_size);
                 case GI_TYPE_TAG_FLOAT:
@@ -287,23 +275,6 @@ scm_to_gi_arg (SCM             scm_arg,
                 case GI_TYPE_TAG_UINT64:
                         arg->v_uint64 = scm_to_uint64 (scm_arg);
                         break;
-                case GI_TYPE_TAG_INT:
-                        arg->v_int = scm_to_int (scm_arg);
-                        break;
-                case GI_TYPE_TAG_UINT:
-                        arg->v_uint = scm_to_uint (scm_arg);
-                        break;
-                case GI_TYPE_TAG_TIME_T:
-                case GI_TYPE_TAG_LONG:
-                        arg->v_long = scm_to_long (scm_arg);
-                        break;
-                case GI_TYPE_TAG_ULONG:
-                        arg->v_ulong = scm_to_ulong (scm_arg);
-                        break;
-                case GI_TYPE_TAG_SSIZE:
-                        arg->v_size = scm_to_size_t (scm_arg);
-                        break;
-                case GI_TYPE_TAG_SIZE:
                 case GI_TYPE_TAG_GTYPE:
                         arg->v_ssize = scm_to_ssize_t (scm_arg);
                         break;
